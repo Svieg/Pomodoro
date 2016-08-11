@@ -7,7 +7,7 @@ import curses
 WORK = "WORK"
 PAUSE = "PAUSE"
 LONGER_PAUSE = "LONGER_PAUSE"
-WORK_TIMEOUT = 25*60
+WORK_TIMEOUT = 2
 PAUSE_TIMEOUT = 5*60
 LONGER_PAUSE_TIMEOUT = 15*60
 
@@ -20,6 +20,7 @@ def play_sound(status, timeout, stdscr):
         time_delta = (timeout - (time() - start_time))/60
         minutes = int(time_delta)
         seconds = int((time_delta - minutes)*60)
+        stdscr.clear()
         stdscr.addstr(0, 0, "[*] {}: {}:{}".format(status, minutes, seconds),
                       curses.A_REVERSE)
         stdscr.refresh()
