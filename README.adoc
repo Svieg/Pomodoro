@@ -1,5 +1,0 @@
-= Pomodoro timer
-
-Helps your productivity !
-
-Created because web-based pomodoro was buggy.
